@@ -121,7 +121,7 @@ div.csl-indent {
 </header>
 
 
-<p>Reproducibility basics + other helpful tips</p>
+<p>Reproducibility basics + a few other helpful tips</p>
 <section id="project-organization" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="project-organization"><span class="header-section-number">1</span> Project Organization</h2>
 <ul>
@@ -159,7 +159,7 @@ div.csl-indent {
 <li>Use scripts to clean and process data, save the cleaned data in <code>data/processed/</code></li>
 <li>Document each step of data cleaning</li>
 <li>Keep data cleaning separate from analysis</li>
-<li>Organize your data in a tidy format where each variable is a column, each observation is a row, and each type of observational unit forms a table</li>
+<li>Organize your data in a tidy format: each variable is a column, each observation is a row</li>
 <li>Reference:
 <ul>
 <li><a href="https://www.jstatsoft.org/article/view/v059i10">Principles of tidy data</a></li>
@@ -202,7 +202,8 @@ div.csl-indent {
 <li><p>Use Makefile or <code>targets</code> package to automate and document the workflow</p></li>
 <li><p>Reference:</p>
 <ul>
-<li><a href="https://books.ropensci.org/targets/">Targets Package</a></li>
+<li><a href="https://books.ropensci.org/targets/">{targets} Package</a><br>
+</li>
 <li><a href="https://mjrolland.github.io/ed-neuro-hpa/">Example Project using {targets}</a></li>
 </ul></li>
 </ul>
@@ -211,14 +212,12 @@ div.csl-indent {
 <h2 data-number="7" class="anchored" data-anchor-id="analysis-scripts"><span class="header-section-number">7</span> Analysis Scripts</h2>
 <ul>
 <li>Break analysis into small, reusable functions</li>
-<li>Use meaningful and consistent naming conventions</li>
-<li>Style your code according to standardized recommendations</li>
+<li>Use meaningful and consistent naming conventions such as provided by the <a href="https://style.tidyverse.org/syntax.html#object-names">Tidyverse Naming Conventions</a> for variables and functions and by <a href="https://datacarpentry.org/rr-organization1/01-file-naming/index.html">data carpentry</a> for folders and files</li>
+<li>Style your code according to standardized recommendations from the <a href="https://style.tidyverse.org/">Tidyverse Style Guide</a></li>
 <li>Reference:
 <ul>
-<li><a href="https://style.tidyverse.org/">Tidyverse Style Guide</a></li>
-<li><a href="https://style.tidyverse.org/syntax.html#object-names">Tidyverse Naming Conventions</a></li>
-<li><a href="https://datacarpentry.org/rr-organization1/01-file-naming/index.html">File Naming Conventions</a></li>
 <li><a href="https://tidyverse.tidyverse.org/articles/manifesto.html#embrace-functional-programming">Embrace functional programming</a></li>
+<li><a href="https://style.tidyverse.org/">Tidyverse Style Guide</a></li>
 </ul></li>
 </ul>
 </section>

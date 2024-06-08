@@ -13,7 +13,7 @@ toc: true
 number-sections: true
 ---
 
-Reproducibility basics + other helpful tips
+Reproducibility basics + a few other helpful tips
 
 ## Project Organization
 
@@ -41,7 +41,7 @@ Reproducibility basics + other helpful tips
 - Use scripts to clean and process data, save the cleaned data in `data/processed/`
 - Document each step of data cleaning
 - Keep data cleaning separate from analysis
-- Organize your data in a tidy format where each variable is a column, each observation is a row, and each type of observational unit forms a table
+- Organize your data in a tidy format: each variable is a column, each observation is a row
 - Reference:
   - [Principles of tidy data](https://www.jstatsoft.org/article/view/v059i10)
 
@@ -72,19 +72,17 @@ OR
 - Use Makefile or `targets` package to automate and document the workflow
 
 - Reference:
-  - [Targets Package](https://books.ropensci.org/targets/)
-  - [Example Project using {targets}](https://mjrolland.github.io/ed-neuro-hpa/)
+  - [{targets} Package](https://books.ropensci.org/targets/)  
+  - [Example Project using {targets}](https://mjrolland.github.io/ed-neuro-hpa/)  
 
 ## Analysis Scripts
 
 - Break analysis into small, reusable functions
-- Use meaningful and consistent naming conventions
-- Style your code according to standardized recommendations
+- Use meaningful and consistent naming conventions such as provided by the [Tidyverse Naming Conventions](https://style.tidyverse.org/syntax.html#object-names) for variables and functions and by [data carpentry](https://datacarpentry.org/rr-organization1/01-file-naming/index.html) for folders and files 
+- Style your code according to standardized recommendations from the [Tidyverse Style Guide](https://style.tidyverse.org/)
 - Reference:
-  - [Tidyverse Style Guide](https://style.tidyverse.org/)
-  - [Tidyverse Naming Conventions](https://style.tidyverse.org/syntax.html#object-names)
-  - [File Naming Conventions](https://datacarpentry.org/rr-organization1/01-file-naming/index.html)
   - [Embrace functional programming](https://tidyverse.tidyverse.org/articles/manifesto.html#embrace-functional-programming)
+  - [Tidyverse Style Guide](https://style.tidyverse.org/)
   
 ## Computational reproducibility
 
