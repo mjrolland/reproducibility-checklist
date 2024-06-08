@@ -1,0 +1,111 @@
+---
+title: "Reproducible Research in R (and friends)"
+subtitle: "Cheatsheet"
+author: "M. Rolland"
+date: "2024-06-08"
+date-modified: today
+format: html
+editor: visual
+bibliography: bib_mr.bib
+nocite: |
+  @marwick_packaging_2018
+toc: true
+number-sections: true
+---
+
+Reproducibility basics + other helpful tips
+
+## Project Organization
+
+- Use a consistent folder structure:
+  - `data/` - Raw data files
+  - `scripts/` - Analysis scripts
+  - `outputs/` - Results (figures, tables)
+  - `docs/` - Documentation and reports
+- Use RStudio Projects to facilitate project management and environment isolation
+- Reference:
+  - [The concept of research compendium](https://peerj.com/preprints/3192/)
+  - [Using RStudio projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+
+## Version Control
+
+- Use Git to track changes in scripts and documents
+- Commit regularly with meaningful messages
+- One repository per analysis 
+- Reference:
+  - [Happy Git with R](https://happygitwithr.com/)
+
+## Data Management
+
+- Store raw data in `data/raw/` and never modify it directly
+- Use scripts to clean and process data, save the cleaned data in `data/processed/`
+- Document each step of data cleaning
+- Keep data cleaning separate from analysis
+- Organize your data in a tidy format where each variable is a column, each observation is a row, and each type of observational unit forms a table
+- Reference:
+  - [Principles of tidy data](https://www.jstatsoft.org/article/view/v059i10)
+
+## Documentation
+
+- Comment code extensively to explain steps and logic
+- Create README files to explain project structure and instructions for running the analysis
+- Document all functions clearly, including input parameters, output, and purpose
+- Reference:
+  - [Example README file](https://gricad-gitlab.univ-grenoble-alpes.fr/iab-env-epi/rolland_effects_2022)
+  - [{roxygen2} for function documentation](https://cran.r-project.org/web/packages/roxygen2/vignettes/roxygen2.html)
+
+## Environment Management
+
+- Use `sessionInfo()` or `devtools::session_info()` to capture the R session information 
+- Use `renv` to manage package versions
+- Reference:
+  - [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html)
+  - [Example on how to show the session info (scroll to bottom)](https://gricad-gitlab.univ-grenoble-alpes.fr/iab-env-epi/rolland_effects_2022)
+
+## Workflow Automation
+
+- Organize your analysis into a series of numbered and ordered scripts to create a clear and reproducible workflow (e.g., 01-data-cleaning.R, 02-data-analysis.R, 03-visualization.R).
+- Create a master script (e.g., run_all.R) that sequentially runs each numbered script
+
+OR
+
+- Use Makefile or `targets` package to automate and document the workflow
+
+- Reference:
+  - [Targets Package](https://books.ropensci.org/targets/)
+  - [Example Project using {targets}](https://mjrolland.github.io/ed-neuro-hpa/)
+
+## Analysis Scripts
+
+- Break analysis into small, reusable functions
+- Use meaningful and consistent naming conventions
+- Style your code according to standardized recommendations
+- Reference:
+  - [Tidyverse Style Guide](https://style.tidyverse.org/)
+  - [Tidyverse Naming Conventions](https://style.tidyverse.org/syntax.html#object-names)
+  - [File Naming Conventions](https://datacarpentry.org/rr-organization1/01-file-naming/index.html)
+  - [Embrace functional programming](https://tidyverse.tidyverse.org/articles/manifesto.html#embrace-functional-programming)
+  
+## Computational reproducibility
+
+- Set seeds to ensure reproducibility when using randomness in your analysis
+- Reference: 
+  - [Random number seed in R](https://makemeanalyst.com/r-programming/random-number-seed/)
+
+## Reporting
+
+- Use RMarkdown (.Rmd) or Quarto (.Qmd) files to combine code, results, and narrative for creating dynamic reports
+- Reference:
+  - [Quarto Documentation](https://quarto.org/)
+
+## Validation
+
+- Get your code reviewed prior to publication
+- Reference:
+  - [Code Review Practices](https://mtlynch.io/human-code-reviews-1/)
+
+## Sharing Code And Data
+
+- Use repositories like GitHub or GitLab for sharing code
+- Use repositories like Zenodo for sharing data sets
+
