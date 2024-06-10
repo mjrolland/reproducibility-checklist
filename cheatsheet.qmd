@@ -1,7 +1,11 @@
 ---
 title: "Reproducible Research in R (and friends)"
 subtitle: "Cheatsheet"
-author: "M. Rolland"
+author: 
+  - name: M. Rolland
+    degrees: MSc
+    orcid: 0000-0002-8076-5550
+    email: matthieu.rolland@univ-grenoble-alpes.fr
 date: "2024-06-08"
 date-modified: today
 format: html
@@ -11,9 +15,10 @@ nocite: |
   @marwick_packaging_2018
 toc: true
 number-sections: true
+theme: cosmo
 ---
 
-Reproducibility basics + a few other helpful tips
+Reproducibility basics + a few other helpful tips.
 
 ## Project Organization
 
