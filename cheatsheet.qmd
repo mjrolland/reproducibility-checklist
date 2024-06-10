@@ -15,10 +15,9 @@ nocite: |
   @marwick_packaging_2018
 toc: true
 number-sections: true
-theme: cosmo
 ---
 
-Reproducibility basics + a few other helpful tips.
+Reproducibility basics + a few other helpful tips. Please email me for any suggestion :)
 
 ## Project Organization
 
