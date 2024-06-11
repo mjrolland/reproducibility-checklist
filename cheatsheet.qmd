@@ -22,7 +22,7 @@ Reproducibility basics + a few other helpful tips. Please email me for any sugge
 ## Project Organization
 
 - Use a consistent folder structure:
-  - `data/` - Raw data files
+  - `data/` - Analysis data files
   - `scripts/` - Analysis scripts
   - `outputs/` - Results (figures, tables)
   - `docs/` - Documentation and reports
@@ -36,12 +36,15 @@ Reproducibility basics + a few other helpful tips. Please email me for any sugge
 - Use Git to track changes in scripts and documents
 - Commit regularly with meaningful messages
 - One repository per analysis 
+- Make sure your `data/` folder is in the `.gitignore` file 
+- Make sure there is no sensitive information in your code
 - Reference:
   - [Happy Git with R](https://happygitwithr.com/)
 
 ## Data Management
 
 - Store raw data in `data/raw/` and never modify it directly
+- Produce a README describing the source data
 - Use scripts to clean and process data, save the cleaned data in `data/processed/`
 - Document each step of data cleaning
 - Keep data cleaning separate from analysis
@@ -61,7 +64,7 @@ Reproducibility basics + a few other helpful tips. Please email me for any sugge
 ## Environment Management
 
 - Use `sessionInfo()` or `devtools::session_info()` to capture the R session information 
-- Use `renv` to manage package versions
+- Use `{renv}` to manage package versions
 - Reference:
   - [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html)
   - [Example on how to show the session info (scroll to bottom)](https://gricad-gitlab.univ-grenoble-alpes.fr/iab-env-epi/rolland_effects_2022)
@@ -73,7 +76,7 @@ Reproducibility basics + a few other helpful tips. Please email me for any sugge
 
 OR
 
-- Use Makefile or `targets` package to automate and document the workflow
+- Use Makefile or `{targets}` package to automate and document the workflow
 
 - Reference:
   - [{targets} Package](https://books.ropensci.org/targets/)  
@@ -109,5 +112,5 @@ OR
 ## Sharing Code And Data
 
 - Use repositories like GitHub or GitLab for sharing code
-- Use repositories like Zenodo for sharing data sets
+- Use repositories like Zenodo or if you have data sets to share
 

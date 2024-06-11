@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -110,7 +110,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 10, 2024</p>
+      <p class="date-modified">June 11, 2024</p>
     </div>
   </div>
     
@@ -127,7 +127,7 @@ div.csl-indent {
 <ul>
 <li>Use a consistent folder structure:
 <ul>
-<li><code>data/</code> - Raw data files</li>
+<li><code>data/</code> - Analysis data files</li>
 <li><code>scripts/</code> - Analysis scripts</li>
 <li><code>outputs/</code> - Results (figures, tables)</li>
 <li><code>docs/</code> - Documentation and reports</li>
@@ -146,6 +146,8 @@ div.csl-indent {
 <li>Use Git to track changes in scripts and documents</li>
 <li>Commit regularly with meaningful messages</li>
 <li>One repository per analysis</li>
+<li>Make sure your <code>data/</code> folder is in the <code>.gitignore</code> file</li>
+<li>Make sure there is no sensitive information in your code</li>
 <li>Reference:
 <ul>
 <li><a href="https://happygitwithr.com/">Happy Git with R</a></li>
@@ -156,6 +158,7 @@ div.csl-indent {
 <h2 data-number="3" class="anchored" data-anchor-id="data-management"><span class="header-section-number">3</span> Data Management</h2>
 <ul>
 <li>Store raw data in <code>data/raw/</code> and never modify it directly</li>
+<li>Produce a README describing the source data</li>
 <li>Use scripts to clean and process data, save the cleaned data in <code>data/processed/</code></li>
 <li>Document each step of data cleaning</li>
 <li>Keep data cleaning separate from analysis</li>
@@ -183,7 +186,7 @@ div.csl-indent {
 <h2 data-number="5" class="anchored" data-anchor-id="environment-management"><span class="header-section-number">5</span> Environment Management</h2>
 <ul>
 <li>Use <code>sessionInfo()</code> or <code>devtools::session_info()</code> to capture the R session information</li>
-<li>Use <code>renv</code> to manage package versions</li>
+<li>Use <code>{renv}</code> to manage package versions</li>
 <li>Reference:
 <ul>
 <li><a href="https://rstudio.github.io/renv/articles/renv.html">Introduction to renv</a></li>
@@ -199,7 +202,7 @@ div.csl-indent {
 </ul>
 <p>OR</p>
 <ul>
-<li><p>Use Makefile or <code>targets</code> package to automate and document the workflow</p></li>
+<li><p>Use Makefile or <code>{targets}</code> package to automate and document the workflow</p></li>
 <li><p>Reference:</p>
 <ul>
 <li><a href="https://books.ropensci.org/targets/">{targets} Package</a><br>
@@ -255,7 +258,7 @@ div.csl-indent {
 <h2 data-number="11" class="anchored" data-anchor-id="sharing-code-and-data"><span class="header-section-number">11</span> Sharing Code And Data</h2>
 <ul>
 <li>Use repositories like GitHub or GitLab for sharing code</li>
-<li>Use repositories like Zenodo for sharing data sets</li>
+<li>Use repositories like Zenodo or if you have data sets to share</li>
 </ul>
 
 </section>
