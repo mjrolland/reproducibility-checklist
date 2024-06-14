@@ -17,7 +17,7 @@ toc: true
 number-sections: true
 ---
 
-Reproducibility basics + a few other helpful tips. Please email me for any suggestion :)
+This cheatsheet provides essential guidelines and best practices for conducting reproducible research using R and related tools. It covers project organization, version control, data management, documentation, environment management, workflow automation, and more. For any suggestions or feedback, please feel free to email me.
 
 ## Project Organization
 
@@ -94,6 +94,7 @@ OR
 ## Computational reproducibility
 
 - Set seeds to ensure reproducibility when using randomness in your analysis
+- Document all warnings
 - Reference: 
   - [Random number seed in R](https://makemeanalyst.com/r-programming/random-number-seed/)
 
