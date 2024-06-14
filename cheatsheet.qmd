@@ -27,6 +27,7 @@ This cheatsheet provides essential guidelines and best practices for conducting 
   - `outputs/` - Results (figures, tables)
   - `docs/` - Documentation and reports
 - Use RStudio Projects to facilitate project management and environment isolation
+- Maintain a project log to document progress, changes, and key decisions throughout the analysis.
 - Reference:
   - [The concept of research compendium](https://peerj.com/preprints/3192/)
   - [Using RStudio projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
