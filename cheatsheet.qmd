@@ -112,6 +112,6 @@ OR
 
 ## Sharing Code And Data
 
-- Use repositories like GitHub or GitLab for sharing code
-- Use repositories like Zenodo or if you have data sets to share
+- Use repositories like [GitHub](https://github.com/) or [GitLab](https://gitlab.com/) for sharing code
+- Use repositories like [Zenodo](https://zenodo.org/) or [data.gouv.fr](https://www.data.gouv.fr/fr/) if you have data sets to share
 
