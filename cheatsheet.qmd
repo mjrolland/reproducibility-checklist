@@ -27,7 +27,7 @@ This cheatsheet provides essential guidelines and best practices for conducting 
   - `outputs/` - Results (figures, tables)
   - `docs/` - Documentation and reports
 - Use RStudio Projects to facilitate project management and environment isolation
-- Maintain a project log to document progress, changes, and key decisions throughout the analysis.
+- Maintain a project log to document progress, changes, and key decisions throughout the analysis
 - Reference:
   - [The concept of research compendium](https://peerj.com/preprints/3192/)
   - [Using RStudio projects](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
@@ -72,7 +72,7 @@ This cheatsheet provides essential guidelines and best practices for conducting 
 
 ## Workflow Automation
 
-- Organize your analysis into a series of numbered and ordered scripts to create a clear and reproducible workflow (e.g., 01-data-cleaning.R, 02-data-analysis.R, 03-visualization.R).
+- Organize your analysis into a series of numbered and ordered scripts to create a clear and reproducible workflow (e.g., 01-data-cleaning.R, 02-data-analysis.R, 03-visualization.R)
 - Create a master script (e.g., run_all.R) that sequentially runs each numbered script
 
 OR
