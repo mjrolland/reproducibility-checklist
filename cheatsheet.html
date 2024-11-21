@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -78,6 +78,7 @@ div.csl-indent {
   <li><a href="#reporting" id="toc-reporting" class="nav-link" data-scroll-target="#reporting"><span class="header-section-number">9</span> Reporting</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation"><span class="header-section-number">10</span> Validation</a></li>
   <li><a href="#sharing-code-and-data" id="toc-sharing-code-and-data" class="nav-link" data-scroll-target="#sharing-code-and-data"><span class="header-section-number">11</span> Sharing Code And Data</a></li>
+  <li><a href="#advanced-analysis-practices" id="toc-advanced-analysis-practices" class="nav-link" data-scroll-target="#advanced-analysis-practices"><span class="header-section-number">12</span> Advanced Analysis Practices</a></li>
   </ul>
 </nav>
 </div>
@@ -110,7 +111,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Modified</div>
     <div class="quarto-title-meta-contents">
-      <p class="date-modified">June 14, 2024</p>
+      <p class="date-modified">November 21, 2024</p>
     </div>
   </div>
     
@@ -262,6 +263,19 @@ div.csl-indent {
 <li>Use repositories like <a href="https://github.com/">GitHub</a> or <a href="https://gitlab.com/">GitLab</a> for sharing code</li>
 <li>Use repositories like <a href="https://zenodo.org/">Zenodo</a> or <a href="https://www.data.gouv.fr/fr/">data.gouv.fr</a> if you have data sets to share</li>
 </ul>
+</section>
+<section id="advanced-analysis-practices" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="advanced-analysis-practices"><span class="header-section-number">12</span> Advanced Analysis Practices</h2>
+<ul>
+<li>Use the “many models” approach to fit and compare models across many subsets of data (e.g.&nbsp;EWAS). Storing models as list-columns in tibbles simplifies storage, manipulation and visualization while promoting modularity and reusability.
+<ul>
+<li>Reference:
+<ul>
+<li><a href="https://tim-tiefenbach.de/post/2023-dplyr-many-models/">Tiefenbach’s Many Models Tutorial</a></li>
+<li><a href="https://r4ds.had.co.nz/many-models.html">R for Data Science: Many Models Chapter</a></li>
+</ul></li>
+</ul></li>
+</ul>
 
 </section>
 
@@ -306,18 +320,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -349,7 +352,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -357,7 +382,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

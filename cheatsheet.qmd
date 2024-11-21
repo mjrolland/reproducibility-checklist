@@ -116,3 +116,11 @@ OR
 - Use repositories like [GitHub](https://github.com/) or [GitLab](https://gitlab.com/) for sharing code
 - Use repositories like [Zenodo](https://zenodo.org/) or [data.gouv.fr](https://www.data.gouv.fr/fr/) if you have data sets to share
 
+## Advanced Analysis Practices
+
+- Use the "many models" approach to fit and compare models across many subsets of data (e.g. EWAS). Storing models as list-columns in tibbles simplifies storage, manipulation and visualization while promoting modularity and reusability.
+  - Reference:
+    - [Tiefenbach's Many Models Tutorial](https://tim-tiefenbach.de/post/2023-dplyr-many-models/)
+    - [R for Data Science: Many Models Chapter](https://r4ds.had.co.nz/many-models.html)
+    
+  
